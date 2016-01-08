@@ -11,6 +11,12 @@
 This provides you a binary that you can use as a githook to validate the commit message. I recommend
 [ghooks](http://npm.im/ghooks). You'll want to make this part of the `commit-msg` githook.
 
+## Usage
+`git commit -m "<type>(<scope>): <subject>"`
+
+### Types authorisés
+feat, fix, docs, style, refactor, perf, test, chore, revert, ajout, correction
+
 ## Credits
 
 This was originally developed by contributors to [the angular.js project](https://github.com/angular/angular.js). I

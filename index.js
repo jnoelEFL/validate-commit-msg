@@ -27,7 +27,9 @@ var TYPES = {
   perf: true,
   test: true,
   chore: true,
-  revert: true
+  revert: true,
+  ajout: true,
+  correction: true
 };
 
 

@@ -3,11 +3,10 @@
   "description": "Script to validate a commit message follows the conventional changelog standard",
   "main": "index.js",
   "scripts": {
-    "commit": "git-cz",
-    "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
+    "check-coverage": "node_modules/.bin/istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
     "report-coverage": "cat ./coverage/lcov.info | codecov",
     "test:watch": "istanbul cover -x *.test.js _mocha -- -R spec -w index.test.js",
-    "test": "istanbul cover -x *.test.js _mocha -- -R spec index.test.js",
+    "test": "node_modules/.bin/istanbul cover -x *.test.js node_modules/mocha/bin/_mocha -- -R spec index.test.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "bin": {
@@ -15,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kentcdodds/validate-commit-msg.git"
+    "url": "https://github.com/jnoelEFL/validate-commit-msg.git"
   },
   "keywords": [
     "githook",
@@ -41,13 +40,5 @@
     "mocha": "2.3.3",
     "semantic-release": "4.3.5",
     "sinon": "1.16.1"
-  },
-  "config": {
-    "ghooks": {
-      "commit-msg": "./index.js && npm t && npm run check-coverage"
-    }
-  },
-  "czConfig": {
-    "path": "node_modules/cz-conventional-changelog"
   }
 }
